@@ -18,6 +18,12 @@
 
 
 // Making conflict
+// Add comment 1
+// Add comment 2
+// Add comment 3
+
+
+
 
 
 void togglePin(void){
