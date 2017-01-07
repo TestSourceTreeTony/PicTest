@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=newmain.c interrupt_handler.c
+SOURCEFILES_QUOTED_IF_SPACED=newmain.c interrupt_handler.c uart_redirection.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.o ${OBJECTDIR}/interrupt_handler.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/interrupt_handler.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.o ${OBJECTDIR}/interrupt_handler.o ${OBJECTDIR}/uart_redirection.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/interrupt_handler.o.d ${OBJECTDIR}/uart_redirection.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/newmain.o ${OBJECTDIR}/interrupt_handler.o
+OBJECTFILES=${OBJECTDIR}/newmain.o ${OBJECTDIR}/interrupt_handler.o ${OBJECTDIR}/uart_redirection.o
 
 # Source Files
-SOURCEFILES=newmain.c interrupt_handler.c
+SOURCEFILES=newmain.c interrupt_handler.c uart_redirection.c
 
 
 CFLAGS=
@@ -99,7 +99,7 @@ ${OBJECTDIR}/newmain.o: newmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/newmain.o.d 
 	@${RM} ${OBJECTDIR}/newmain.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/newmain.o   newmain.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ml -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/newmain.o   newmain.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/newmain.o 
 	@${FIXDEPS} "${OBJECTDIR}/newmain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -107,16 +107,24 @@ ${OBJECTDIR}/interrupt_handler.o: interrupt_handler.c  nbproject/Makefile-${CND_
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/interrupt_handler.o.d 
 	@${RM} ${OBJECTDIR}/interrupt_handler.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/interrupt_handler.o   interrupt_handler.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ml -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/interrupt_handler.o   interrupt_handler.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/interrupt_handler.o 
 	@${FIXDEPS} "${OBJECTDIR}/interrupt_handler.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/uart_redirection.o: uart_redirection.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/uart_redirection.o.d 
+	@${RM} ${OBJECTDIR}/uart_redirection.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ml -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/uart_redirection.o   uart_redirection.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/uart_redirection.o 
+	@${FIXDEPS} "${OBJECTDIR}/uart_redirection.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 else
 ${OBJECTDIR}/newmain.o: newmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/newmain.o.d 
 	@${RM} ${OBJECTDIR}/newmain.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/newmain.o   newmain.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ml -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/newmain.o   newmain.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/newmain.o 
 	@${FIXDEPS} "${OBJECTDIR}/newmain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
@@ -124,9 +132,17 @@ ${OBJECTDIR}/interrupt_handler.o: interrupt_handler.c  nbproject/Makefile-${CND_
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/interrupt_handler.o.d 
 	@${RM} ${OBJECTDIR}/interrupt_handler.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/interrupt_handler.o   interrupt_handler.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ml -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/interrupt_handler.o   interrupt_handler.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/interrupt_handler.o 
 	@${FIXDEPS} "${OBJECTDIR}/interrupt_handler.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/uart_redirection.o: uart_redirection.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/uart_redirection.o.d 
+	@${RM} ${OBJECTDIR}/uart_redirection.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ml -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/uart_redirection.o   uart_redirection.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/uart_redirection.o 
+	@${FIXDEPS} "${OBJECTDIR}/uart_redirection.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 endif
 
